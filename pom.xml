@@ -10,7 +10,7 @@
 
     <packaging>war</packaging>
 
-    <name>${gaeApplicationName}</name>
+    <name>FoosHistory</name>
 
     <repositories>
         <repository>
@@ -21,6 +21,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
         <!--
         jars from GAE's "lib/user" must be added as compile-time dependencies,
         as described here in "Copying JARs" section:
@@ -156,7 +162,7 @@
             <plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
-				        <version>${gaePluginVersion}</version>
+				        <version>0.9.0</version>
             </plugin>
 
             <!--
