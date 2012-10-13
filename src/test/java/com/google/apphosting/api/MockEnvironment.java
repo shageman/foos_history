@@ -30,6 +30,11 @@ public class MockEnvironment implements ApiProxy.Environment {
         return map;
     }
 
+    @Override
+    public long getRemainingMillis() {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     /**
      * @see com.google.apphosting.api.ApiProxy.Environment#getAuthDomain()
      * @throws UnsupportedOperationException
