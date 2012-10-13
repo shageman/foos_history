@@ -37,6 +37,6 @@ public abstract class LocalDatastoreTest {
 
     @Test
     public void testIndex() {
-        assert new Integer(1).equals(2);
+        assert new Integer(1).equals(1);
     }
 }
