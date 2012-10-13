@@ -211,7 +211,8 @@
         SDK version pointed to by ${gae.home} property (Typically, one used by your
         Eclipse plug-in).
         -->
-        <gae.version>1.6.5</gae.version>
+        <gae.home>/usr/local/Cellar/app-engine-java-sdk/1.7.2/</gae.home>
+        <gae.version>1.7.2</gae.version>
 
         <!--
         Upload to http://test.latest.<applicationName>.appspot.com by
