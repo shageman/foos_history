@@ -8,16 +8,16 @@ import java.util.Collection;
 
 import model.Message;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import com.googlecode.objectify.ObjectifyService;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 /**
  * Tests {@link MessageRepository} class.
  *
  * @author androns
  */
+@Test
 public class MessageRepositoryTest extends LocalDatastoreTest {
 
     private MessageRepository messageRepository;
@@ -25,7 +25,7 @@ public class MessageRepositoryTest extends LocalDatastoreTest {
     /**
      * @see LocalDatastoreTest#setUp()
      */
-    @Before
+    @BeforeTest
     @Override
     public void setUp() {
         super.setUp();

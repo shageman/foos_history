@@ -18,7 +18,6 @@ public abstract class LocalDatastoreTest {
     private final LocalServiceTestHelper helper =
         new LocalServiceTestHelper(new LocalDatastoreServiceTestConfig());
 
-
     /**
      *
      */
@@ -33,10 +32,5 @@ public abstract class LocalDatastoreTest {
     @After
     public void tearDown() {
         this.helper.tearDown();
-    }
-
-    @Test
-    public void testIndex() {
-        assert new Integer(1).equals(1);
     }
 }
