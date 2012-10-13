@@ -5,6 +5,7 @@ import org.junit.Before;
 
 import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
+import org.testng.annotations.Test;
 
 /**
  * Performs datastore setup, as described <a
@@ -32,5 +33,10 @@ public abstract class LocalDatastoreTest {
     @After
     public void tearDown() {
         this.helper.tearDown();
+    }
+
+    @Test
+    public void testIndex() {
+        assert new Integer(1).equals(2);
     }
 }
