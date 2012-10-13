@@ -1,5 +1,5 @@
 ## Foos History [![Build Status](https://secure.travis-ci.org/shageman/foos_history.png)](https://secure.travis-ci.org/shageman/foos_history)
-Google app engine app (http://http://foos-history.appspot.com/) to display a chart of the history of foos player ratings. Using objectify for ORM.
+Google app engine app (http://foos-history.appspot.com/) to display a chart of the history of foos player ratings. Using objectify for ORM.
 
 ## Run
 `mvn gae:run`
