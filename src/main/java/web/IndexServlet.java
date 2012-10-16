@@ -10,25 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
-import model.Message;
-
+import model.PlayerRating;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import server.MessageRepository;
-
+import server.PlayerRatingRepository;
 
 
 /**
- */
+*/
 public class IndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private static final Logger log = LoggerFactory
     .getLogger(IndexServlet.class);
 
-    private final MessageRepository messageRepository = new MessageRepository();
+    private final PlayerRatingRepository playerRatingRepository = new PlayerRatingRepository();
 
     @Override
     protected void doGet(final HttpServletRequest request,
@@ -41,7 +37,7 @@ public class IndexServlet extends HttpServlet {
 
         // delete
         if (request.getParameter("id") != null) {
-            deleteMessage(request);
+            deletePlayerRating(request);
 
             response.sendRedirect("index");
 
@@ -49,11 +45,11 @@ public class IndexServlet extends HttpServlet {
         }
 
         // get
-        final Collection<Message> messages = this.messageRepository.getAll();
-        request.setAttribute("messages", messages);
+        final Collection<PlayerRating> playerRatings = this.playerRatingRepository.getAll();
+        request.setAttribute("playerRatings", playerRatings);
 
         if (log.isDebugEnabled()) {
-            log.debug("messages: " + messages);
+            log.debug("playerRatings: " + playerRatings);
         }
 
         forward(request, response, "index.jsp");
@@ -69,35 +65,35 @@ public class IndexServlet extends HttpServlet {
         }
 
         // create
-        createMessage(request);
+        createPlayerRating(request);
         response.sendRedirect("index");
     }
 
-    protected void createMessage(final HttpServletRequest request) {
+    protected void createPlayerRating(final HttpServletRequest request) {
         final String text = request.getParameter("text");
 
         if (log.isDebugEnabled()) {
-            log.debug("creating message with text: " + text);
+            log.debug("creating playerRating with text: " + text);
         }
 
-        final Message message = new Message(text);
-        this.messageRepository.create(message);
+        final PlayerRating playerRating = new PlayerRating();
+        this.playerRatingRepository.create(playerRating);
     }
 
-    protected void deleteMessage(final HttpServletRequest request) {
+    protected void deletePlayerRating(final HttpServletRequest request) {
         final Long id = Long.valueOf(request.getParameter("id"));
 
         if (log.isDebugEnabled()) {
-            log.debug("deleting message with id: " + id);
+            log.debug("deleting playerRating with id: " + id);
         }
 
-        this.messageRepository.deleteById(id);
+        this.playerRatingRepository.deleteById(id);
     }
 
     /**
      * Forwards request and response to given path. Handles any
      * exceptions caused by forward target by printing them to logger.
-     * 
+     *
      * @param request
      * @param response
      * @param path

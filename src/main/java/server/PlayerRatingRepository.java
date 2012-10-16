@@ -1,33 +1,31 @@
 package server;
 
-import java.util.Collection;
-
-import model.Message;
-
-
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
+import model.PlayerRating;
+
+import java.util.Collection;
 
 
 /**
  */
-public class MessageRepository {
+public class PlayerRatingRepository {
     /**
-     * @return Collection of Message
+     * @return Collection of PlayerRating
      */
-    public Collection<Message> getAll() {
+    public Collection<PlayerRating> getAll() {
         final Objectify service = getService();
 
-        return(service.query(Message.class).list());
+        return(service.query(PlayerRating.class).list());
     }
 
     /**
-     * @param message
+     * @param playerRating
      */
-    public void create(final Message message) {
+    public void create(final PlayerRating playerRating) {
         final Objectify service = getService();
 
-        service.put(message);
+        service.put(playerRating);
     }
 
     /**
@@ -36,7 +34,7 @@ public class MessageRepository {
     public void deleteById(final Long id) {
         final Objectify service = getService();
 
-        service.delete(Message.class, id.longValue());
+        service.delete(PlayerRating.class, id.longValue());
     }
 
     private Objectify getService() {

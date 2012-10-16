@@ -3,11 +3,9 @@ package web;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import model.Message;
-
 
 import com.googlecode.objectify.ObjectifyService;
-
+import model.PlayerRating;
 
 
 /**
@@ -15,7 +13,7 @@ import com.googlecode.objectify.ObjectifyService;
 public final class ContextInitializer implements ServletContextListener {
     @Override
     public void contextInitialized(final ServletContextEvent sce) {
-        ObjectifyService.register(Message.class);
+        ObjectifyService.register(PlayerRating.class);
     }
 
     @Override
